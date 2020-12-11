@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+# set -ex
 export TRAVIS_BUILD_DIR=$(pwd)
 export TRAVIS_BRANCH=$DRONE_BRANCH
 export TRAVIS_OS_NAME=${DRONE_JOB_OS_NAME:-linux}
@@ -95,10 +95,15 @@ echo '==================================> BEFORE_SCRIPT'
 echo '==================================> SCRIPT'
 
 sources=($(find include doc test example -name "*.hpp" -or -name "*.cpp"))
+echo 1
 LANG=POSIX grep '[^[:print:][:cntrl:]]' "${sources[@]}"; [[ $? == 1 ]] || exit 1
+echo 2
 LANG=POSIX grep $'\r'                   "${sources[@]}"; [[ $? == 1 ]] || exit 1
+echo 3
 LANG=POSIX grep $'\t'                   "${sources[@]}"; [[ $? == 1 ]] || exit 1
+echo 4
 LANG=POSIX grep '[[:blank:]]$'          "${sources[@]}"; [[ $? == 1 ]] || exit 1
+echo 5
 if [[ "${DOCUMENTATION}" == "true" ]]; then
   (cd build && ! make doc 2>&1 | grep -E "error") || exit 1
 
