@@ -12,4 +12,3 @@ if [ "$DRONE_JOB_UUID" = "b6589fc6ab" ] || [ "$DRONE_JOB_UUID" = "356a192b79" ] 
     cd "${TRAVIS_BUILD_DIR}"
     (mkdir build && cd build && cmake .. ${CMAKE_OPTIONS})
 fi
-
