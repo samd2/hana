@@ -4,7 +4,7 @@
 
 language: cpp
 os: linux # Jobs are on Linux unless specified otherwise
-dist: trusty # Jobs are on Trusty unless specified otherwise
+dist: xenial # Jobs are on Trusty unless specified otherwise
 sudo: false
 
 env:
