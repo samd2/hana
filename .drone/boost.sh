@@ -43,7 +43,7 @@ if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
   mkdir cmake && wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C cmake
   export PATH=${DEPS_DIR}/cmake/bin:${PATH}
 else
-  # brew install cmake || # brew upgrade cmake
+  true # brew install cmake || true # brew upgrade cmake
 fi
 
 cmake --version
@@ -79,7 +79,7 @@ if [[ "${CXX%%+*}" == "clang" ]]; then
 fi
 
 if [[ "${DOCUMENTATION}" == "true" ]]; then
-  # brew install doxygen
+  true # brew install doxygen
   doxygen --version
 fi
 
