@@ -56,7 +56,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "clang++-5.0"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "5.0"
             unit_tests: "true"
             compiler: "clang++-5.0"
@@ -83,7 +83,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "clang++-7"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "7"
             unit_tests: "true"
             compiler: "clang++-7"
@@ -136,7 +136,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "default"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "7"
             cmake_options: "-DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=ON"
             unit_tests: "true"
@@ -163,7 +163,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "default"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "7"
             cmake_options: "-DBOOST_HANA_ENABLE_CONCEPT_CHECKS=OFF"
             unit_tests: "true"
@@ -176,7 +176,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "default"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "7"
             cmake_options: "-DBOOST_HANA_ENABLE_DEBUG_MODE=ON"
             unit_tests: "true"
@@ -189,7 +189,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "default"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "7"
             cmake_options: "-DBOOST_HANA_ENABLE_EXCEPTIONS=OFF"
             unit_tests: "true"
@@ -202,7 +202,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "default"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "7"
             unit_tests: "true"
             compiler: "default"
@@ -214,7 +214,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "default"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "7"
             unit_tests: "true"
             compiler: "default"
@@ -226,7 +226,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "default"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "7"
             unit_tests: "true"
             compiler: "default"job_uuid: "0716d9708d"
@@ -237,7 +237,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "default"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "7"
             boost_build: "true"
             compiler: "default"
@@ -249,7 +249,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "default"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "7"
             cmake_options: "-DCMAKE_BUILD_TYPE=Release"
             benchmarks: "true"
@@ -262,7 +262,7 @@ jobs:
             os: "ubuntu-16.04"
             cxx: "default"
             sources: ""
-            llvm_os: "trusty"
+            llvm_os: "xenial"
             llvm_ver: "7"
             unit_tests: "true"
             compiler: "default"
@@ -295,7 +295,8 @@ jobs:
           BOOST_BUILD: ${{ matrix.boost_build }}
           DOCUMENTATION: ${{ matrix.documentation }}
           BENCHMARKS: ${{ matrix.benchmarks }}
-          TRAVIS_BRANCH: ${{ github.base_ref }}JOB_UUID: ${{ matrix.job_uuid }}
+          TRAVIS_BRANCH: ${{ github.base_ref }}
+          TRAVIS_OS_NAME: "linux"JOB_UUID: ${{ matrix.job_uuid }}
         run: |
           echo '==================================> SETUP'
           if [ -n "$GHA_CONTAINER" ]; then
@@ -624,7 +625,8 @@ jobs:
           BOOST_BUILD: ${{ matrix.boost_build }}
           DOCUMENTATION: ${{ matrix.documentation }}
           BENCHMARKS: ${{ matrix.benchmarks }}
-          TRAVIS_BRANCH: ${{ github.base_ref }}JOB_UUID: ${{ matrix.job_uuid }}
+          TRAVIS_BRANCH: ${{ github.base_ref }}
+          TRAVIS_OS_NAME: "osx"JOB_UUID: ${{ matrix.job_uuid }}
         run: |
           echo '==================================> SETUP'
           set -ex
